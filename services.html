@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leeza Esquivel Cleaning Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Leeza Esquivel Cleaning Services</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Leeza</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <p>Serving Spring Valley, Ottawa, and now seeking clients in DeKalb, IL!</p>
+    </header>
+
+    <section id="serviceArea">
+        <h2>Our Service Area</h2>
+        <p>We proudly serve Spring Valley, Ottawa, and DeKalb, IL.</p>
+        <div class="map-container" style="display: flex; justify-content: center;">
+            <svg viewBox="0 0 400 250" width="100%" height="250">
+                <!-- Simple Illinois outline -->
+                <polygon points="120,20 300,40 350,120 320,220 180,230 100,180 120,20"
+                    fill="#e0e0e0" stroke="#888" stroke-width="2"/>
+                <!-- Lines between cities -->
+                <line x1="255" y1="110" x2="140" y2="130" stroke="#888" stroke-width="2"/>
+                <line x1="255" y1="110" x2="260" y2="60" stroke="#888" stroke-width="2"/>
+                <line x1="140" y1="130" x2="260" y2="60" stroke="#888" stroke-width="2"/>
+                <!-- Markers for cities (approximate positions) -->
+                <circle cx="255" cy="110" r="7" fill="#4caf50"/>
+                <text x="265" y="115" font-size="14" fill="#333">Ottawa</text>
+                <circle cx="140" cy="130" r="7" fill="#2196f3"/>
+                <text x="150" y="135" font-size="14" fill="#333">Spring Valley</text>
+                <circle cx="260" cy="60" r="7" fill="#f44336"/>
+                <text x="270" y="65" font-size="14" fill="#333">DeKalb</text>
+            </svg>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">What cleaning services do you offer?</button>
+            <div class="faq-answer" hidden>
+                We offer residential and commercial cleaning, including deep cleaning, move-in/move-out, and regular maintenance.
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">How do I request a quote?</button>
+            <div class="faq-answer" hidden>
+                You can request a quote by contacting us through our website's contact form, email, or phone.
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Do you bring your own cleaning supplies?</button>
+            <div class="faq-answer" hidden>
+                Yes, we bring all necessary cleaning supplies and equipment. If you have special requests, let us know!
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Are you insured and bonded?</button>
+            <div class="faq-answer" hidden>
+                Yes, we are fully insured and bonded for your peace of mind.
+            </div>
+        </div>
+    </section>
+    <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            answer.hidden = expanded;
+        });
+    });
+    </script>
+    
+</body>
+</html>

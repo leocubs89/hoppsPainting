@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Baylee Esquivel Painting Services</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f7fafc;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(90deg, #f7971e, #ffd200);
+            color: #fff;
+            padding: 2rem 1rem 1rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+        header p {
+            margin: 0 0 1rem 0;
+            font-size: 1.2rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        nav a {
+            display: inline-block;
+            background: #ffb347;
+            color: #222;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.6rem 1.6rem;
+            border-radius: 25px;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            font-size: 1rem;
+        }
+        nav a:hover {
+            background: #f7971e;
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(255,183,0,0.15);
+        }
+        .book-now-btn {
+            background: #ffb347;
+            color: #222;
+            border: none;
+            border-radius: 25px;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: background 0.2s;
+            margin-top: 1rem;
+        }
+        .book-now-btn:hover {
+            background: #f7971e;
+            color: #fff;
+        }
+        main {
+            max-width: 1600px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            padding: 2rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+        .card {
+            background: #fff;
+            border-radius: 1.2em;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1.5px 6px rgba(0,0,0,0.06);
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.18s;
+        }
+        .card:hover {
+            transform: translateY(-6px) scale(1.025);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.13), 0 2px 8px rgba(0,0,0,0.09);
+        }
+        .card h2 {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            font-size: 1.6em;
+            text-align: center;
+        }
+        .card .emoji {
+            font-size: 2.2em;
+            margin-bottom: 0.5em;
+        }
+        .card img {
+            border-radius: 50%;
+            margin-bottom: 1em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1em 0 0 0;
+            width: 100%;
+        }
+        .card ul li {
+            padding: 0.5em 0;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 0.7em;
+        }
+        .card .contact-links a {
+            color: #f7971e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .card .contact-links a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .card {
+                padding: 1.2rem 0.7rem;
+            }
+        }
+        h2 {
+            color: #f7971e;
+            margin-top: 0;
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        .contact a {
+            color: #f7971e;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        .contact-form {
+            background: #fffbe7;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(247,151,30,0.07);
+            margin-top: 2rem;
+        }
+        .contact-form h3 {
+            margin-top: 0;
+            color: #f7971e;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.7rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ffe082;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: #fff;
+            resize: vertical;
+        }
+        .contact-form button {
+            background: #f7971e;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 0.7rem 1.8rem;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-form button:hover {
+            background: #b06ab3;
+        }
+        #serviceArea {
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 1.2rem 0;
+            background: #fffde7;
+            color: #555;
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 1rem;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+        a {
+            color: #f7971e;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background: #fffde7;
+            color: #555;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.95rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 0 0.5rem;
+            }
+            section {
+                padding: 1rem;
+            }
+            header {
+                padding: 1.2rem 0.5rem 0.7rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Baylee Esquivel Painting Services</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Baylee</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <p>Serving Bureau County, IL!</p>
+    </header>
+    <main>
+        <section class="card about" id="about">
+            <div class="emoji" aria-label="paint palette">🎨</div>
+            <h2>About Baylee</h2>
+            <img src="pictures/hoppsFamily.jpg" alt="Hopps Family" style="width:400px;height:300px;">
+            <p style="text-align:center;">
+                Hi! I'm Baylee Hopps, a passionate painting professional with years of experience transforming homes and businesses in the Bureau County Area.<br>
+            </p>
+        </section>
+        <section class="card services" id="services" style="background: #fffbe7;">
+            <div style="display: flex; align-items: center; gap: 0.5em;">
+                <div class="emoji" aria-label="paint roller">🪣</div>
+                <h2 style="margin: 0;">Painting Services Offered</h2>
+            </div>
+            <div class="cards-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 2rem; margin-top: 2rem;">
+                <div class="card service-card">
+                    <div style="display: flex; align-items: center; gap: 0.5em;">
+                        <div class="emoji" aria-label="house">🏠</div>
+                        <h3 style="margin: 0;">Interior Painting</h3>
+                    </div>
+                    <p>Expert painting for walls, ceilings, trim, and more to refresh your home's interior.</p>
+                </div>
+                <div class="card service-card">
+                    <div style="display: flex; align-items: center; gap: 0.5em;">
+                        <div class="emoji" aria-label="building">🏢</div>
+                        <h3 style="margin: 0;">Commercial Painting</h3>
+                    </div>
+                    <p>Professional painting for offices, retail spaces, and businesses to create a welcoming environment.</p>
+                </div>
+                <div class="card service-card">
+                    <div style="display: flex; align-items: center; gap: 0.5em;">
+                        <div class="emoji" aria-label="house with garden">🏡</div>
+                        <h3 style="margin: 0;">Exterior Painting</h3>
+                    </div>
+                    <p>Durable and beautiful exterior painting for homes and buildings, including siding, doors, and trim.</p>
+                </div>
+                <div class="card service-card">
+                    <div style="display: flex; align-items: center; gap: 0.5em;">
+                        <div class="emoji" aria-label="sparkles">✨</div>
+                        <h3 style="margin: 0;">Cabinet & Furniture Painting</h3>
+                    </div>
+                    <p>Give your cabinets and furniture a fresh, modern look with professional painting and refinishing.</p>
+                </div>
+                <div class="card service-card">
+                    <div style="display: flex; align-items: center; gap: 0.5em;">
+                        <div class="emoji" aria-label="clipboard">📝</div>
+                        <h3 style="margin: 0;">Custom Color Consultation</h3>
+                    </div>
+                    <p>Personalized color advice and planning to help you choose the perfect palette for your space.</p>
+                </div>
+            </div>
+        </section>
+        <section class="beforeAfterPictures" id="beforeAfterPictures">
+            <h2 style="text-align:center;">Before & After</h2>
+            <div id="ba-pair-container" style="max-width:1200px;margin:2rem auto;">
+                <style>
+                    /* styles adapted for multiple instances */
+                    .ba-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; align-items: start; }
+                    .ba-instance .ba-frame {
+                        position: relative;
+                        width: 100%;
+                        overflow: hidden;
+                        border-radius: 12px;
+                        box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+                        aspect-ratio: 4/3;
+                        background: #eee;
+                    }
+                    .ba-instance .ba-frame img {
+                        position: absolute;
+                        inset: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                    }
+                    .ba-instance .ba-frame .ba-before { z-index: 1; }
+                    .ba-instance .ba-frame .ba-after  { z-index: 2; opacity: 0; transition: opacity 300ms ease; }
+
+                    /* toggle checkbox (one per instance) */
+                    .ba-toggle { display: none; }
+
+                    /* when checked, reveal the after image for that instance */
+                    .ba-toggle:checked ~ .ba-frame .ba-after { opacity: 1; }
+
+                    /* styled label that acts like a toggle button */
+                    .ba-button {
+                        display: block;
+                        width: 80%;
+                        margin: 1rem auto 0;
+                        padding: 0.6rem 1.6rem;
+                        border-radius: 25px;
+                        background: #ffb347;
+                        color: #222;
+                        font-weight: 600;
+                        text-align: center;
+                        cursor: pointer;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                        user-select: none;
+                    }
+                    /* change appearance when checked (per instance) */
+                    .ba-toggle:checked ~ .ba-button {
+                        background: #f7971e;
+                        color: #fff;
+                    }
+
+                    /* label text changes based on state */
+                    .ba-button::after { content: "Show After"; }
+                    .ba-toggle:checked ~ .ba-button::after { content: "Show before"; }
+
+                    /* captions */
+                    .ba-captions {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: 0.5rem;
+                        font-size: 1rem;
+                        color: #888;
+                        width: 80%;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+
+                    @media (max-width: 600px) {
+                        .ba-button, .ba-captions { width: 90%; }
+                        .ba-pair { grid-template-columns: 1fr; gap: 1rem; }
+                    }
+                </style>
+
+                <div class="ba-pair">
+                    <div class="ba-instance">
+                        <input class="ba-toggle" type="checkbox" id="ba-toggle-1" />
+                        <div class="ba-frame" aria-hidden="false" aria-label="Before and after painting 1">
+                            <img class="ba-before" src="pictures/barnBefore.jpg" alt="Before painting 1">
+                            <img class="ba-after" src="pictures/barnAfter.jpg" alt="After painting 1">
+                        </div>
+                        <label for="ba-toggle-1" class="ba-button" role="button" aria-pressed="false"></label>
+                        <div class="ba-captions">
+                        </div>
+                    </div>
+
+                    <div class="ba-instance">
+                        <input class="ba-toggle" type="checkbox" id="ba-toggle-2" />
+                        <div class="ba-frame" aria-hidden="false" aria-label="Before and after painting 2">
+                            <img class="ba-before" src="pictures/houseBefore.jpg" alt="Before painting 2">
+                            <img class="ba-after" src="pictures/houseAfter.jpg" alt="After painting 2">
+                        </div>
+                        <label for="ba-toggle-2" class="ba-button" role="button" aria-pressed="false"></label>
+                        <div class="ba-captions">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="card contact" id="contact">
+            <div class="emoji" aria-label="telephone">📞</div>
+            <h2>Contact</h2>
+            <div class="contact-links" style="text-align:center;">
+                <p>
+                    Ready to transform your space?<br>
+                    <span aria-label="phone">📱</span>
+                    <a href="tel:1234567890">(123) 456-7890</a><br>
+                    <span aria-label="email">✉️</span>
+                    <a href="mailto:baylee.painting@email.com">baylee.painting@email.com</a>
+                </p>
+                <p>
+                    <span aria-label="map">🗺️</span>
+                    Serving: Princeton, Mendota, and Peru, IL
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Hopps Painting Services</p>
+    </footer>
+</body>
+</html>
