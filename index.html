@@ -27,6 +27,24 @@
             margin: 0 0 1rem 0;
             font-size: 1.2rem;
         }
+
+        /* Nav */
+        nav {
+            position: relative;
+        }
+        .nav-toggle-btn {
+            display: none;
+            background: transparent;
+            border: 0;
+            color: #222;
+            font-weight: 700;
+            background: #ffb347;
+            padding: 0.5rem 0.9rem;
+            border-radius: 18px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            font-size: 1rem;
+        }
         nav ul {
             list-style: none;
             padding: 0;
@@ -52,6 +70,7 @@
             color: #fff;
             box-shadow: 0 4px 16px rgba(255,183,0,0.15);
         }
+
         .book-now-btn {
             background: #ffb347;
             color: #222;
@@ -137,22 +156,7 @@
         .card .contact-links a:hover {
             text-decoration: underline;
         }
-        @media (max-width: 600px) {
-            .cards-grid {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-            }
-            .card {
-                padding: 1.2rem 0.7rem;
-            }
-        }
-        h2 {
-            color: #f7971e;
-            margin-top: 0;
-        }
-        ul {
-            padding-left: 1.2rem;
-        }
+
         .contact a {
             color: #f7971e;
             text-decoration: none;
@@ -213,6 +217,45 @@
             margin-top: 2rem;
         }
         @media (max-width: 600px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .card {
+                padding: 1.2rem 0.7rem;
+            }
+            .nav-toggle-btn {
+                display: inline-block;
+                position: relative;
+            }
+            /* hide the desktop horizontal menu and present dropdown instead */
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                position: absolute;
+                left: 0.5rem;
+                right: 0.5rem;
+                top: calc(100% + 0.5rem);
+                background: linear-gradient(90deg, #ffb347, #ffd200);
+                padding: 0.6rem;
+                border-radius: 12px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            }
+            nav.open ul {
+                display: flex;
+            }
+            nav ul li {
+                margin: 0.35rem 0;
+            }
+            nav a {
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 0.6rem;
+                border-radius: 12px;
+            }
+
             main {
                 padding: 1rem;
             }
@@ -220,9 +263,94 @@
                 font-size: 1.5rem;
             }
         }
+
+        h2 {
+            color: #f7971e;
+            margin-top: 0;
+        }
         ul {
             padding-left: 1.2rem;
         }
+        .contact a {
+            color: #f7971e;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        #beforeAfterPictures .ba-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; align-items: start; }
+        /* before/after styles (kept as-is) */
+        .ba-instance .ba-frame {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            aspect-ratio: 4/3;
+            background: #eee;
+        }
+        .ba-instance .ba-frame img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .ba-instance .ba-frame .ba-before { z-index: 1; }
+        .ba-instance .ba-frame .ba-after  { z-index: 2; opacity: 0; transition: opacity 300ms ease; }
+        .ba-toggle { display: none; }
+        .ba-toggle:checked ~ .ba-frame .ba-after { opacity: 1; }
+        .ba-button {
+            display: block;
+            width: 80%;
+            margin: 1rem auto 0;
+            padding: 0.6rem 1.6rem;
+            border-radius: 25px;
+            background: #ffb347;
+            color: #222;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            user-select: none;
+        }
+        .ba-toggle:checked ~ .ba-button {
+            background: #f7971e;
+            color: #fff;
+        }
+        .ba-button::after { content: "Show After"; }
+        .ba-toggle:checked ~ .ba-button::after { content: "Show before"; }
+        .ba-captions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            color: #888;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (max-width: 600px) {
+            .ba-button, .ba-captions { width: 90%; }
+            .ba-pair { grid-template-columns: 1fr; gap: 1rem; }
+        }
+
+        /* About image responsiveness */
+        .about-img {
+            width: 400px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0.8rem auto;
+        }
+        @media (max-width: 600px) {
+            .about-img {
+                width: 220px; /* smaller on phones */
+            }
+        }
+
         a {
             color: #f7971e;
             text-decoration: none;
@@ -255,7 +383,8 @@
     <header>
         <h1>Hopps Family Painting Services</h1>
         <nav>
-            <ul>
+      <!--    <button id="nav-toggle-btn" class="nav-toggle-btn" aria-expanded="false" aria-controls="nav-list">☰ Menu</button> -->
+            <ul id="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About Baylee</a></li>
@@ -267,7 +396,8 @@
     <main>
         <section class="card about" id="about">
             <h2>About Hopps Family Painting</h2>
-            <img src="pictures/hoppsFamily.jpg" alt="Hopps Family" style="width:400px;height:300px;">
+            <!-- replaced inline fixed size with responsive class -->
+            <img src="pictures/hoppsFamily.jpg" alt="Hopps Family" class="about-img">
             <p style="text-align:center;">
                 Hi! I'm Baylee Hopps, a passionate painting professional with years of experience transforming homes and businesses in the Bureau County Area.<br>
             </p>
@@ -319,7 +449,7 @@
             <h2 style="text-align:center;">Before & After</h2>
             <div id="ba-pair-container" style="max-width:1200px;margin:2rem auto;">
                 <style>
-                    /* styles adapted for multiple instances */
+                    /* styles adapted for multiple instances (kept here for encapsulation) */
                     .ba-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; align-items: start; }
                     .ba-instance .ba-frame {
                         position: relative;
@@ -329,64 +459,6 @@
                         box-shadow: 0 2px 12px rgba(0,0,0,0.10);
                         aspect-ratio: 4/3;
                         background: #eee;
-                    }
-                    .ba-instance .ba-frame img {
-                        position: absolute;
-                        inset: 0;
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        display: block;
-                    }
-                    .ba-instance .ba-frame .ba-before { z-index: 1; }
-                    .ba-instance .ba-frame .ba-after  { z-index: 2; opacity: 0; transition: opacity 300ms ease; }
-
-                    /* toggle checkbox (one per instance) */
-                    .ba-toggle { display: none; }
-
-                    /* when checked, reveal the after image for that instance */
-                    .ba-toggle:checked ~ .ba-frame .ba-after { opacity: 1; }
-
-                    /* styled label that acts like a toggle button */
-                    .ba-button {
-                        display: block;
-                        width: 80%;
-                        margin: 1rem auto 0;
-                        padding: 0.6rem 1.6rem;
-                        border-radius: 25px;
-                        background: #ffb347;
-                        color: #222;
-                        font-weight: 600;
-                        text-align: center;
-                        cursor: pointer;
-                        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-                        user-select: none;
-                    }
-                    /* change appearance when checked (per instance) */
-                    .ba-toggle:checked ~ .ba-button {
-                        background: #f7971e;
-                        color: #fff;
-                    }
-
-                    /* label text changes based on state */
-                    .ba-button::after { content: "Show After"; }
-                    .ba-toggle:checked ~ .ba-button::after { content: "Show before"; }
-
-                    /* captions */
-                    .ba-captions {
-                        display: flex;
-                        justify-content: space-between;
-                        margin-top: 0.5rem;
-                        font-size: 1rem;
-                        color: #888;
-                        width: 80%;
-                        margin-left: auto;
-                        margin-right: auto;
-                    }
-
-                    @media (max-width: 600px) {
-                        .ba-button, .ba-captions { width: 90%; }
-                        .ba-pair { grid-template-columns: 1fr; gap: 1rem; }
                     }
                 </style>
 
