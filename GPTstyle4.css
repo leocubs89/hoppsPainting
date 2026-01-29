@@ -408,7 +408,7 @@ h2 {
 }
 
 .serviceLinks {
-    text-decoration none;
+    text-decoration: none;
 }
 
 /* CONTACT SECTION */
@@ -591,4 +591,5 @@ footer a:hover {
         padding: 1.1rem 0.9rem 2.1rem 0.9rem;
     }
 }
+
 
