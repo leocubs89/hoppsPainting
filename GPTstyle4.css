@@ -407,6 +407,10 @@ h2 {
     color: #374151;
 }
 
+.serviceLinks {
+    text-decoration none;
+}
+
 /* CONTACT SECTION */
 .contact-section {
     display: grid;
@@ -587,3 +591,4 @@ footer a:hover {
         padding: 1.1rem 0.9rem 2.1rem 0.9rem;
     }
 }
+
