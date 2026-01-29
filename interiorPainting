@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interior Painting | Hopps Family Painting | Bureau & LaSalle County, IL</title>
+  <meta name="description" content="Professional interior painting for homes and businesses in Bureau & LaSalle County, IL. Clean lines, careful prep, and respectful job sites. Free estimates." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<header>
+  <div class="header-inner">
+    <div class="top-bar">
+      <div>
+        <div class="logo-text">Hopps Family Painting</div>
+        <div class="tagline-mini">Serving Bureau & LaSalle Counties • Reliable, Clean, Professional</div>
+      </div>
+
+      <nav id="site-nav">
+        <button class="nav-toggle-btn" onclick="document.getElementById('site-nav').classList.toggle('open')">Menu</button>
+        <ul id="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="interior-painting.html">Interior</a></li>
+          <li><a href="exterior-painting.html">Exterior</a></li>
+          <li><a href="commercial-painting.html">Commercial</a></li>
+          <li><a href="cabinet-furniture-painting.html">Cabinets</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <div>
+        <h1>Interior Painting</h1>
+        <p>
+          Fresh paint makes the biggest difference inside your home. We handle prep the right way, protect your floors and furniture,
+          and leave you with clean, crisp results that hold up.
+        </p>
+
+        <div class="hero-highlights">
+          <div class="hero-pill">🧽 Careful prep</div>
+          <div class="hero-pill">📏 Clean, crisp lines</div>
+          <div class="hero-pill">🧹 Tidy job sites</div>
+          <div class="hero-pill">🗣️ Clear communication</div>
+        </div>
+
+        <div class="hero-cta">
+          <a class="book-now-btn" href="index.html#contact">Get a Free Estimate</a>
+          <div class="hero-secondary">Serving <strong>Bureau & LaSalle Counties, IL</strong></div>
+        </div>
+      </div>
+
+      <div class="hero-photo-card">
+        <img src="images/interior-hero.jpg" alt="Freshly painted interior room" />
+        <div class="hero-photo-caption">Interior walls, trim, doors, ceilings, and more.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>What We Paint</h2>
+    <div class="cards-grid">
+      <div class="card service-card">
+        <div class="card-header-row"><div class="emoji">🏠</div><h3>Walls & Ceilings</h3></div>
+        <p>Living rooms, bedrooms, kitchens, hallways — we deliver smooth, even coverage.</p>
+      </div>
+      <div class="card service-card">
+        <div class="card-header-row"><div class="emoji">🚪</div><h3>Trim, Doors & Baseboards</h3></div>
+        <p>Sharp edges and clean finishes that make the whole room look “done.”</p>
+      </div>
+      <div class="card service-card">
+        <div class="card-header-row"><div class="emoji">🧰</div><h3>Drywall Touch-Ups</h3></div>
+        <p>Small repairs, nail pops, minor patching and sanding before we paint.</p>
+      </div>
+      <div class="card service-card">
+        <div class="card-header-row"><div class="emoji">🎨</div><h3>Color Changes</h3></div>
+        <p>We can help you pick colors that fit your lighting, style, and space.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-area">
+    <h2>Service Area</h2>
+    <p>Locally owned and operated in Bureau County, providing professional painting services throughout Bureau and LaSalle Counties.</p>
+  </section>
+
+  <section>
+    <h2>How the Process Works</h2>
+    <div class="cards-grid">
+      <div class="card service-card">
+        <div class="card-header-row"><div class="emoji">📞</div><h3>Estimate & Plan</h3></div>
+        <p>Walkthrough, colors, timeline, and a clear quote — no guessing.</p>
+      </div>
+      <div class="card service-card">
+        <div class="card-header-row"><div class="emoji">🛡️</div><h3>Protect & Prep</h3></div>
+        <p>Cover floors/furniture, repair small issues, caulk where needed, and sand for adhesion.</p>
+      </div>
+      <div class="card service-card">
+        <div class="card-header-row"><div class="emoji">🖌️</div><h3>Paint & Detail</h3></div>
+        <p>Clean cut-ins, consistent finish, and detail work that holds up.</p>
+      </div>
+      <div class="card service-card">
+        <div class="card-header-row"><div class="emoji">🧹</div><h3>Clean Up</h3></div>
+        <p>We leave the space tidy and walk it with you when we’re done.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="card contact-card">
+      <h2>Free Estimates</h2>
+      <p>Tell us what you’re painting and we’ll get you a solid quote.</p>
+      <div class="contact-links">
+        <p><strong>Phone:</strong> <a href="tel:15555555555">(555) 555-5555</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@hoppsfamilypainting.com">info@hoppsfamilypainting.com</a></p>
+      </div>
+    </div>
+
+    <form class="contact-form">
+      <h3>Request a Quote</h3>
+      <label>Name</label>
+      <input type="text" placeholder="Your name" />
+      <label>Phone or Email</label>
+      <input type="text" placeholder="How should we reach you?" />
+      <label>Project Details</label>
+      <textarea rows="5" placeholder="Rooms, trim, ceilings, colors, timeline, etc."></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  © <span id="y"></span> Hopps Family Painting • Bureau & LaSalle Counties, IL
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</footer>
+</body>
+</html>
