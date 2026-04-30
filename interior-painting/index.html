@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url=/interior-painting/">
+  <link rel="canonical" href="https://hopps-painting.com/interior-painting/">
+  <title>Redirecting...</title>
+</head>
+<body>
+  <p>Redirecting to <a href="/interior-painting/">Interior Painting</a>.</p>
+</body>
+</html>
+Also, inside the new /interior-painting/index.html, fix paths like this:
+
+<link rel="stylesheet" href="/GPTstyle4.css" />
+<img src="/pictures/paintedBedroom.jpg" alt="Freshly painted interior room" />
+Because once the page lives inside a folder, GPTstyle4.css would otherwise look for:
+
+/interior-painting/GPTstyle4.css
+instead of the root file.
+
+
+I am struggling to create a folder in my github
+
+
+Yeah—this part trips everyone up the first time on GitHub. It’s not obvious because GitHub doesn’t have a “New Folder” button.
+
+Here’s the exact move 👇
+
+🔧 How to create a folder on GitHub (the right way)
+GitHub only creates folders when you create a file inside them.
+
+Step-by-step:
+Go to your repo (where your website files are)
+
+Click “Add file” → “Create new file”
+
+In the filename box, type:
+
+interior-painting/index.html
+👉 The / automatically creates the folder
+
+💥 What to put in that file
+Paste your FULL interior painting page HTML (the one you sent me), but:
+
+❗ REMOVE this part from the top:
+
+<meta http-equiv="refresh" content="0; url=/interior-painting/" />
+<link rel="canonical" href="https://hopps-painting.com/interior-painting/" />
+That redirect should NOT be in the new page.
+
+🔁 Then fix your old file
+Now go back to:
+
+/interior-painting.html
+Replace EVERYTHING with this:
+
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="0; url=/interior-painting/" />
+  <link rel="canonical" href="https://hopps-painting.com/interior-painting/" />
+  <title>Redirecting...</title>
+</head>
+<body>
+  Redirecting...
+</body>
+</html>
+⚠️ One more thing (this will break if you skip it)
+Inside your new /interior-painting/index.html, change paths like:
+
+<link rel="stylesheet" href="GPTstyle4.css" />
+<img src="pictures/paintedBedroom.jpg">
+➡️ to:
+
+<link rel="stylesheet" href="/GPTstyle4.css" />
+<img src="/pictures/paintedBedroom.jpg">
+🧪 Test after pushing
+Give it ~1 minute after commit, then test:
+
+✅ https://hopps-painting.com/interior-painting/ → should load page
+
+✅ https://hopps-painting.com/interior-painting.html → should redirect
+
+🧠 Why this works (quick intuition)
+GitHub Pages behaves like this:
+
+URL	What it looks for
+/interior-painting/	/interior-painting/index.html
+/interior-painting.html	exact file
+So we’re basically:
+
+Moving the real page → folder version
+
+Turning old .html → redirect
+
+If you want, next move we can:
+
+Clean ALL your URLs at once (not just this one)
+
+Fix your nav links (you still have .html in your menu 👀)
+
+Update your sitemap so Google Search Console picks it up fast
+
+You’re super close—this is the last “GitHub weirdness” hurdle.
+
+
+Voice Typing
+
+Ready for your note — just start speaking...
+Copy
+Play 
+Alt
+A
+
+Save to Library
+Alt
+S
+
+Dictate
+
+Settings
+
+  <nav id="site-nav">
+    <button class="nav-toggle-btn" onclick="document.getElementById('site-nav').classList.toggle('open')">Menu</button>
+    <ul id="nav-list">
+      <li><a href="https://hopps-painting.com">Home</a></li>
+      <li><a href="interior-painting.html">Interior</a></li>
+      <li><a href="exterior-painting.html">Exterior</a></li>
+      <li><a href="commercial-painting.html">Commercial</a></li>
+      <li><a href="cabinet-furniture-painting.html">Cabinets</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="hero">
+  <div>
+    <h1>Interior Painting</h1>
+    <p>
+      Fresh paint makes the biggest difference inside your home. We handle prep the right way, protect your floors and furniture,
+      and leave you with clean, crisp results that hold up.
+    </p>
+
+    <div class="hero-highlights">
+      <div class="hero-pill">🧽 Careful prep</div>
+      <div class="hero-pill">📏 Clean, crisp lines</div>
+      <div class="hero-pill">🧹 Tidy job sites</div>
+      <div class="hero-pill">🗣️ Clear communication</div>
+    </div>
+
+    <div class="hero-cta">
+      <a class="book-now-btn" href="index.html#contact">Get a Free Estimate</a>
+      <div class="hero-secondary">Or call <strong>(815) 303-8145</strong> to talk through your project.</div>
+    </div>
+  </div>
+
+  <div class="hero-photo-card">
+    <img src="pictures/paintedBedroom.jpg" alt="Freshly painted interior room" />
+    <div class="hero-photo-caption">Interior walls, trim, doors, ceilings, and more.</div>
+  </div>
+</div>
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-section">
+        <div class="contact-card">
+            <div class="emoji" aria-hidden="true" style="font-size:2rem;">📞</div>
+            <p>Ready to transform your space or get a ballpark estimate?</p>
+
+            <div class="contact-links">
+                <p>
+                    <strong>Call or text:</strong><br>
+                    <span aria-label="phone">📱</span>
+                    <a href="tel:8153038145">(815) 303-8145</a>
+                </p>
+                <p>
+                    <strong>Email:</strong><br>
+                    <span aria-label="email">✉️</span>
+                    <a href="mailto:hoppspainting74@gmail.com">hoppspainting74@gmail.com</a>
+                </p>
+                <p>
+                  <strong>Facebook:</strong><br>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61575521008681"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <img
+                      src="pictures/facebookLogo.svg"
+                      alt=""
+                      width="18"
+                      height="18"
+                      style="vertical-align:middle; margin-right:0.4rem;"
+                    >
+                    Hopps Family Painting
+                  </a>
+                </p>
+                <p>
+                    <strong>Service Area:</strong><br>
+                    Bureau County, IL & LaSalle County, IL    
+                </p>
+            </div>
+            <p style="margin-top:0.8rem; font-size:0.95rem;">
+                Share a few details about your project and I’ll follow up to schedule a visit or provide a more detailed estimate.
+            </p>
+        </div>
+    </div>
+</section>
+
+Close
