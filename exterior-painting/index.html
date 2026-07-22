@@ -143,23 +143,51 @@
                 </p>
             </div>
 
-  <!--         <form class="contact-form" action="#" method="post">
-                <h3>Request a Free Estimate</h3>
+            <form class="contact-form"
+                  action="https://formspree.io/f/mlgqwpwz"
+                  method="POST">
+            
                 <label for="name">Name</label>
-                <input id="name" name="name" type="text" placeholder="Your name" required>
-
-                <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" placeholder="Best number to reach you">
-
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="John Smith"
+                    required>
+            
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@example.com">
-
-                <label for="details">Project details</label>
-                <textarea id="details" name="details" rows="4" placeholder="Example: interior repaint of living room and hallway, looking to schedule within the next month."></textarea>
-
-                <button type="submit">Send Request</button>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required>
+            
+                <label for="phone">Phone</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="(555) 123-4567">
+            
+                <label for="city">City</label>
+                <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="DeKalb">
+            
+                <label for="message">Tell us about your project</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Tell us what you're looking to have painted..."
+                    required></textarea>
+            
+                <button type="submit">Request a Free Estimate</button>
+            
             </form>
-            -->
         </div>
     </section>
   
