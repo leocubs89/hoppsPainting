@@ -237,7 +237,15 @@
                   action="https://formspree.io/f/mlgqwpwz"
                   method="POST">
             
-                <label for="email">Email Address</label>
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="John Smith"
+                    required>
+            
+                <label for="email">Email</label>
                 <input
                     type="email"
                     id="email"
@@ -245,15 +253,30 @@
                     placeholder="you@example.com"
                     required>
             
-                <label for="message">Message</label>
+                <label for="phone">Phone</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="(555) 123-4567">
+            
+                <label for="city">City</label>
+                <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="DeKalb">
+            
+                <label for="message">Tell us about your project</label>
                 <textarea
                     id="message"
                     name="message"
                     rows="6"
-                    placeholder="How can we help?"
+                    placeholder="Tell us what you're looking to have painted..."
                     required></textarea>
             
-                <button type="submit">Send Message</button>
+                <button type="submit">Request a Free Estimate</button>
+            
             </form>
         </div>
     </section>
